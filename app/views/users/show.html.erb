@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<h1>Showing New User</h1>
+<table>
+	<thead>
+		<tr>
+		<td>
+		 Name
+		</td>
+		<td>
+		Birthday
+		</td>
+		<td>
+		 Telephone
+		</td>
+		<td>
+		City
+		</td>
+		<td>
+		 Country
+		</td>
+		<td>
+		Description
+		</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @user.name %></td>
+	        <td><%= @user.birthday %></td>
+	        <td><%= @user.avatar %></td>
+	        <td><%= @user.telephone %></td>
+	        <td><%= @user.city %></td>
+	        <td><%= @user.Country %></td>
+	        <td><%= @user.description %></td>
+		</tr>
+
+	</tbody>
+</table>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+<h1>Showing New Experience</h1>
+<table>
+	<thead>
+		<tr>
+		<td>
+		 Title
+		</td>
+		<td>
+		Tagline
+		</td>
+		<td>
+		 Poster
+		</td>
+		<td>
+		Provided
+		</td>
+		<td>
+		 Notes
+		</td>
+		<td>
+		Description
+		</td>
+		<td>
+		Deadline
+		</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @experience.title %></td>
+	        <td><%= @experience.tagline %></td>
+	        <td><%= @experience.poster_url %></td>
+	        <td><%= @experience.provided %></td>
+	        <td><%= @experience.notes %></td>
+	        <td><%= @experience.description %></td>
+	        <td><%= @experience.deadline %> </td>
+		</tr>
+
+	</tbody>
+</table>
+<%= link_to 'Edit', edit_experience_path(@experience) %> |
+<%= link_to 'Back', experiences_path %>

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+<h1>Showing New Activities</h1>
+<table>
+	<thead>
+		<tr>
+		<td>
+		 Title
+		</td>
+		<td>
+		Date
+		</td>
+		<td>
+		 Start Time
+		</td>
+		<td>
+		End Time
+		</td>
+		<td>
+		 Picture
+		</td>
+		<td>
+		Picture
+		</td>
+		<td>
+		Picture
+		</td>
+		<td>
+		Price
+		</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @activity.title %></td>
+	        <td><%= @activity.date %></td>
+	        <td><%= @activity.start_time %></td>
+	        <td><%= @activity.end_time %></td>
+	        <td><%= @activity.pic1_url%></td>
+	        <td><%= @activity.pic2_url %></td>
+	        <td><%= @activity.pic3_url %></td>
+	        <td><%= @activity.price %></td>
+		</tr>
+
+	</tbody>
+</table>
+		
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

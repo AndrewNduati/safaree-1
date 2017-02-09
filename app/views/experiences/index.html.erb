@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Experiences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3">Experiences</th>
+    </tr>
+    <tr>
+    <td>
+     Title
+    </td>
+    <td>
+    Tagline
+    </td>
+    <td>
+     Poster
+    </td>
+    <td>
+    Provided
+    </td>
+    <td>
+     Notes
+    </td>
+    <td>
+    Deadline
+    </td>
+    <td>
+    Description
+    </td>
+  </thead>
+
+  <tbody>
+    <% @experiences.each do |experience| %>
+      <tr>
+        <td><%= experience.title %></td>
+        <td><%= experience.tagline %></td>
+        <td><%= experience.poster_url %></td>
+        <td><%= experience.provided %></td>
+        <td><%= experience.notes %></td>
+        <td><%= experience.deadline %></td>
+        <td><%= experience.description %></td>
+        <td><%= link_to 'Show', experience %></td>
+        <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
+        <td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Experience', new_experience_path %>
