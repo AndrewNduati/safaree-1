@@ -27,12 +27,15 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
 
+    @activity.experience_id = params[:experience_id]
+    
     respond_to do |format|
+
       if @activity.save
-        format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
+        format.html { redirect_to experience_activities_path, notice: 'Activity was successfully created.' }
         
       else
-        format.html { render :new }
+        format.html { render :new , notice: @activity.errors.full_messages }
        
       end
     end

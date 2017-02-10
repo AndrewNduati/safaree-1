@@ -1,6 +1,6 @@
 <h1>Editing Activity</h1>
 
-<%= form_for :activity, url: activity_path(@activity), method: :patch do |f| %>
+<%= form_for :activity, url: experience_activity_path(@activity), method: :patch do |f| %>
 
 		<% if  @activity.errors.any? %>
 			<div id="error_explanation" >
@@ -67,5 +67,5 @@
 		</p>
 		<% end %>
 
-<%= link_to 'Show', @activity %> |
-<%= link_to 'Back', activities_path %>
+<%= link_to 'Show', @experience_activity %> |
+<%= link_to 'Back', experience_activities_path %>
