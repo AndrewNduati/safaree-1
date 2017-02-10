@@ -5,14 +5,51 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th colspan="3">All Activities </th>
+    </tr>
+    <tr>
+    <td>
+     Title
+    </td>
+    <td>
+    Date
+    </td>
+    <td>
+     Start Time
+    </td>
+    <td>
+    End Time
+    </td>
+    <td>
+     Picture
+    </td>
+    <td>
+    Picture
+    </td>
+    <td>
+    Picture
+    </td>
+    <td>
+    Location
+    </td>
+    <td>
+    Price
+    </td>
     </tr>
   </thead>
 
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
-        <td><%= link_to 'Show', activity %></td>
+       <td><%= activity.title %></td>
+       <td><%= activity.date %></td>
+        <td><%= activity.start_time %></td>
+        <td><%= activity.end_time %></td>
+        <td><%= activity.pic1_url %></td>
+        <td><%= activity.pic2_url %></td>
+        <td><%= activity.pic3_url %></td>
+        <td><%= activity.location %></td>
+        <td><%= activity.price   %></td>
         <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
         <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

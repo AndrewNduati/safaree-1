@@ -1,6 +1,71 @@
 <h1>Editing Activity</h1>
 
-<%= render 'form', activity: @activity %>
+<%= form_for :activity, url: activity_path(@activity), method: :patch do |f| %>
+
+		<% if  @activity.errors.any? %>
+			<div id="error_explanation" >
+			<h2>
+		<!--pluralize has no space between e( KEEP IT LOCKED  -->
+			<%= pluralize(@activity.errors.count, "error") %>
+				stopped it
+			</h2>
+		<ul>
+		<% @activity.errors.full_messages.each do |m| %>
+		<li> <%= m %> </li>
+		<% end %>
+		</ul>
+		</div>
+		<% end %>
+
+		<p>
+		<%= f.label :title %> <br>
+		<%= f.text_field :title, class: 'form-control' %>
+		</p>
+
+		<p>
+		<%= f.label :start_time %><br>
+		<%= f.time_field :start_time, :ignore_date => true, class: 'form-control' %>
+		</p>
+		<p>
+			<%= f.label :end_time %><br>
+    		<%= f.time_field :end_time, :ignore_date => true, class: 'form-control' %><br>
+    
+		</p>
+		<p>
+			<%= f.label :date %><br>
+    		<%= f.date_field :date, class: 'form-control' %><br>
+    
+		</p>
+		<p>
+			<%= f.label :Picture %><br>
+    		<%= f.text_field :pic1_url, class: 'form-control' %><br>
+    
+		</p>
+		<p>
+			 <%= f.label :Picture %><br>
+             <%= f.text_field :pic2_url, class: 'form-control' %><br>
+    
+		</p>
+		<p>
+			 <%= f.label :Picture %><br>
+             <%= f.text_field :pic3_url, class: 'form-control' %><br>
+    
+		</p>
+		<p>
+			 <%= f.label :location %><br>
+             <%= f.text_field :location, class: 'form-control' %><br>
+    
+		</p>
+		<p>
+			 <%= f.label :price %><br>
+             <%= f.number_field :price, class: 'form-control' %><br>
+    
+		</p>
+		<p>
+			<%= render 'form', activity: @activity %>
+			
+		</p>
+		<% end %>
 
 <%= link_to 'Show', @activity %> |
 <%= link_to 'Back', activities_path %>

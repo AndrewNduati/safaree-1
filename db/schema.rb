@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209131459) do
+ActiveRecord::Schema.define(version: 20170210102120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20170209131459) do
     t.date    "date"
     t.string  "location"
     t.float   "price"
-    t.integer "experiences_id"
-    t.index ["experiences_id"], name: "index_activities_on_experiences_id", using: :btree
+    t.integer "experience_id"
+    t.index ["experience_id"], name: "index_activities_on_experience_id", using: :btree
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -88,5 +88,5 @@ ActiveRecord::Schema.define(version: 20170209131459) do
     t.string "email"
   end
 
-  add_foreign_key "activities", "experiences", column: "experiences_id"
+  add_foreign_key "activities", "experiences"
 end
