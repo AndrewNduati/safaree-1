@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
   # GET /bookings/1
   # GET /bookings/1.json
   def show
-    
+
   end
 
   # GET /bookings/new
@@ -28,8 +28,6 @@ class BookingsController < ApplicationController
   # POST /bookings.json
   def create
 
-   # @user       = User.find_by_id(booking_params[:users_id])
-    # @experience = Experience.find_by_id(booking_params[:experience_id])
     @booking    = Booking.new(booking_params)
 
     respond_to do |format|

@@ -10,6 +10,10 @@ end
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
+# Carrier wave for file and image uploading
+gem 'carrierwave', '~> 1.0'
+# Mini Magick to provide even thumbnails and all for this
+gem 'mini_magick'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

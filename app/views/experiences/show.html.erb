@@ -35,7 +35,10 @@
 	        <td><%= @experience.description %></td>
 	        <td><%= @experience.deadline %> </td>
 		</tr>
-
+		<p>
+  <strong>Image:</strong>
+  <%= image_tag @experience.poster_url.url %>
+		</p>
 	</tbody>
 </table>
 

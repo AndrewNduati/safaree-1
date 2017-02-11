@@ -46,6 +46,8 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
+
+
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
@@ -80,6 +82,9 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  # Ensure images and such assets load without having a route
+  config.serve_static_assets = true
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

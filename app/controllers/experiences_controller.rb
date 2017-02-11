@@ -26,14 +26,15 @@ class ExperiencesController < ApplicationController
   # POST /experiences.json
   def create
     @experience = Experience.new(experience_params)
+   # @experience.poster_url = params[experience]
 
     respond_to do |format|
       if @experience.save
         format.html { redirect_to @experience, notice: 'Experience was successfully created.' }
-        format.json { render :show, status: :created, location: @experience }
+       
       else
         format.html { render :new }
-        format.json { render json: @experience.errors, status: :unprocessable_entity }
+        
       end
     end
   end

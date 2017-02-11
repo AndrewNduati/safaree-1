@@ -10,7 +10,7 @@
     <%= f.text_field :tagline, :required =>true, class: 'form-control' %><br>
     
     <%= f.label :poster_url %><br>
-    <%= f.text_field :poster_url, :required =>true, class: 'form-control' %><br>
+    <%= f.file_field :poster_url, :required =>true, class: 'form-control' %><br>
     
     <%= f.label :provided %><br>
     <%= f.text_area :provided, :required =>true, class: 'form-control' %><br>
@@ -23,6 +23,7 @@
    
     <%= f.label :Description %><br>
     <%= f.text_area :description, :required =>true, class: 'form-control' %><br>
+    
 
     </p>
 	<p>
