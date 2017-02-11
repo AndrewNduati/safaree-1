@@ -1,4 +1,30 @@
 <p id="notice"><%= notice %></p>
+<h1>Showing Your Booking</h1>
+<table>
+	<thead>
+		<tr>
+		<td>
+		 Booking ID
+		</td>
+		<td>
+		Booked Date
+		</td>
+		<td>
+		Experience 
+		</td>
+		<td>
+		Description
+		</td>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @booking.id %></td>
+	        <td><%= @booking.trip_date %></td>
+			<td><%= label_tag :Experience, Experience.find_by_id(@booking.experience_id).title %></td>
+			<td><%= label_tag :Experience, Experience.find_by_id(@booking.experience_id).description %></td>
+		</tr>
 
+	</tbody>
+</table>
 <%= link_to 'Edit', edit_booking_path(@booking) %> |
 <%= link_to 'Back', bookings_path %>
