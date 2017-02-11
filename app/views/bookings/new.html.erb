@@ -1,4 +1,31 @@
+<p id="notice"><%= notice %></p>
 <h1>New Booking</h1>
+
+<%= form_for :booking, url: bookings_path do |f| %>
+	<p>
+	<%= f.label :experience %><br>
+    <%= f.text_field :title, :required =>true, class: 'form-control' %><br>
+    <%= f.label :start_time %><br>
+    <%= f.time_field :start_time, :required =>true, class: 'form-control' %><br>
+    <%= f.label :end_time %><br>
+    <%= f.time_field :end_time, :required =>true, class: 'form-control' %><br>
+    <%= f.label :picture_one %><br>
+    <%= f.text_field :pic1_url, :required =>true, class: 'form-control' %><br>
+    <%= f.label :picture_two %><br>
+    <%= f.text_field :pic2_url, :required =>true, class: 'form-control' %><br>
+    <%= f.label :picture_three %><br>
+    <%= f.text_field :pic3_url, :required =>true, class: 'form-control' %><br>
+    <%= f.label :date %><br>
+    <%= f.date_field :date, :required =>true, class: 'form-control' %><br>
+    <%= f.label :price %><br>
+    <%= f.number_field :price, :required =>true, class: 'form-control' %><br>
+    
+	</p>
+	<p>
+	
+		<%= f.submit "Create Booking",class: 'btn btn-primary' %>
+	</p>
+	<% end %>
 
 <%= render 'form', booking: @booking %>
 

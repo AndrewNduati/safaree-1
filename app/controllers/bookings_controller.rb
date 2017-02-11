@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   # GET /bookings
   # GET /bookings.json
   def index
+    
     @bookings = Booking.all
   end
 
@@ -19,20 +20,23 @@ class BookingsController < ApplicationController
 
   # GET /bookings/1/edit
   def edit
+
   end
 
   # POST /bookings
   # POST /bookings.json
   def create
+    @user = User.all
     @booking = Booking.new(booking_params)
 
     respond_to do |format|
       if @booking.save
+        
         format.html { redirect_to @booking, notice: 'Booking was successfully created.' }
-        format.json { render :show, status: :created, location: @booking }
+        
       else
         format.html { render :new }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+        
       end
     end
   end
@@ -43,10 +47,10 @@ class BookingsController < ApplicationController
     respond_to do |format|
       if @booking.update(booking_params)
         format.html { redirect_to @booking, notice: 'Booking was successfully updated.' }
-        format.json { render :show, status: :ok, location: @booking }
+        
       else
         format.html { render :edit }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+        
       end
     end
   end
@@ -57,7 +61,7 @@ class BookingsController < ApplicationController
     @booking.destroy
     respond_to do |format|
       format.html { redirect_to bookings_url, notice: 'Booking was successfully destroyed.' }
-      format.json { head :no_content }
+     
     end
   end
 
@@ -69,6 +73,6 @@ class BookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.fetch(:booking, {})
+      params.require(:booking).permit(:user_id, :experience_id, :date_trip)
     end
 end
