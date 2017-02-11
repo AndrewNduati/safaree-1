@@ -44,7 +44,7 @@
         <td><%= experience.description %></td>
         <td><%= link_to 'Show', experience %></td>
         <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
-        <td> <%= link_to 'Book Now!', bookings_path %> </td>
+        <td><%= link_to("BOOK NOW", :controller => "bookings", :action => "new", :experience_id => experience.id, :users_id => 2) %></td>
         <td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

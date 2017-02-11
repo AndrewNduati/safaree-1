@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210102120) do
+ActiveRecord::Schema.define(version: 20170211092608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 20170210102120) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "experiences_id"
+    t.integer "user_id"
+    t.integer "experience_id"
     t.date    "trip_date"
-    t.index ["experiences_id"], name: "index_bookings_on_experiences_id", using: :btree
-    t.index ["users_id"], name: "index_bookings_on_users_id", using: :btree
+    t.index ["experience_id"], name: "index_bookings_on_experience_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
   create_table "experience_reviews", force: :cascade do |t|
