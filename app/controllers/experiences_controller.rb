@@ -7,6 +7,9 @@ class ExperiencesController < ApplicationController
     @experiences = Experience.all
   end
 
+  def search
+    @experiences = Experience.search(params[:search])
+  end
   # GET /experiences/1
   # GET /experiences/1.json
   def show
@@ -45,10 +48,10 @@ class ExperiencesController < ApplicationController
     respond_to do |format|
       if @experience.update(experience_params)
         format.html { redirect_to @experience, notice: 'Experience was successfully updated.' }
-        format.json { render :show, status: :ok, location: @experience }
+        
       else
         format.html { render :edit }
-        format.json { render json: @experience.errors, status: :unprocessable_entity }
+        
       end
     end
   end
@@ -59,7 +62,7 @@ class ExperiencesController < ApplicationController
     @experience.destroy
     respond_to do |format|
       format.html { redirect_to experiences_url, notice: 'Experience was successfully destroyed.' }
-      format.json { head :no_content }
+      
     end
   end
 
@@ -71,6 +74,6 @@ class ExperiencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
-      params.require(:experience).permit(:title, :tagline, :poster_url, :description, :notes, :provided, :deadline)
+      params.require(:experience).permit(:title, :tagline, :poster_url, :description, :notes, :provided, :deadline,:price, :country, :search)
     end
 end

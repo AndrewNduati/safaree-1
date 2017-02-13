@@ -1,56 +1,218 @@
 <p id="notice"><%= notice %></p>
+<body style="background-color: #E0E3DA";>
+ <div class="about-w3bnr">
+    <!-- header -->
+    <div class="header">
+      <!-- navigation -->
+      <div style="background-color: #0c343d" class="navigation agiletop-nav">
+        <div class="container">
+          
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header w3l_logo">
+              <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <h1><a href="index.html">Safaree<span>Africa</span></a></h1>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+              
+            </div>
+            <div class="cart cart box_1">
+              <form action="#" method="post" class="last">
+                <input type="hidden" name="cmd" value="_cart" />
+                <input type="hidden" name="display" value="1" />
+                <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+              </form>
+            </div>
+          
+        </div>
+      </div>
+      <!-- //navigation -->
+    </div>
 
-<h1>Experiences</h1>
+    <div class="products">
+      <div class="container">
+        <div class="col-md-9 product-w3ls-right">
+          <div class="product-top">
+            <h4>Experiences</h4>
+            <ul>
+              <li class="dropdown head-dpdn">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filter By<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Low price</a></li>
+                  <li><a href="#">High price</a></li>
+                  <li><a href="#">Latest</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="clearfix"> </div>
+          </div>
+        
+         <div class="row">
+         <% @experiences.each do |experience| %>
+          <div class="col-md-12">
+            <div class="mg-avl-room">
+              <div class="row">
+                <div class="col-sm-5">
+                <%= image_tag experience.poster_url.url, class: "img-responsive" %>  
+                </div>
+                <div class="col-sm-7">
+                  <h3 class="mg-avl-room-title"><a href="#"><%= experience.title %></a> <span style="float: right">$<%= experience.price %></span></h3>
+                  <p><%= experience.description %></p>
+                  <div class="row mg-room-fecilities">
+                    <div class="col-sm-6">
+                        <ul><li><%= experience.provided %></li></ul>
+                    </div>
+                  </div>
+                
+                  <%= link_to 'View Details', experience, {:class => "btn btn-light"} %>
+                  <%= link_to "Book Now", {:controller => "bookings", :action => "new", :experience_id => experience.id, :users_id => 2}, 
+                                {:class => "btn btn-main pull-right"} %>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3">Experiences</th>
-    </tr>
-    <tr>
-    <td>
-     Title
-    </td>
-    <td>
-    Tagline
-    </td>
-    <td>
-     Poster
-    </td>
-    <td>
-    Provided
-    </td>
-    <td>
-     Notes
-    </td>
-    <td>
-    Deadline
-    </td>
-    <td>
-    Description
-    </td>
-    </tr>
-  </thead>
+          <!--Side-bar -->
+        </div>
+        <div class="col-md-3 rsidebar">
+          <div class="rsidebar-top">
+            <div class="slider-left">
+              <h4>Price</h4>
+              <div class="row row1 scroll-pane">
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>$ 100</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>$ 200 - 300</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Over $ 300</label>
+              </div>
+            </div>
+            <div class="sidebar-row">
+              <div class="clearfix"> </div>
+              <!-- script for tabs -->
+              
+                
+             
+              <!-- script for tabs -->
+            </div>
+            <div class="sidebar-row">
+              <h4>Categories</h4>
+              <div class="row row1 scroll-pane">
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>History</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Beaches</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Hiking</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Neighborhood</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Nightlife</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Shopping</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Workshop</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Arts and Streetarts</label>
+              </div>
+            </div>
 
-  <tbody>
-    <% @experiences.each do |experience| %>
-      <tr>
-        <td><%= experience.title %></td>
-        <td><%= experience.tagline %></td>
-        <td><%= experience.poster_url %></td>
-        <td><%= experience.provided %></td>
-        <td><%= experience.notes %></td>
-        <td><%= experience.deadline %></td>
-        <td><%= experience.description %></td>
-        <td><%= link_to 'Show', experience %></td>
-        <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
-        <td><%= link_to("BOOK NOW", :controller => "bookings", :action => "new", :experience_id => experience.id, :users_id => 2) %></td>
-        <td><%= link_to 'Destroy', experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          </div>
+        </div>
+        
+      </div>
+      <div class="clearfix"> </div>
+  </div>
+    </div>
+</body>
 
-<br>
+    <div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <section>
+          <div class="modal-body">
+            <div class="col-md-5 modal_body_left">
+              <%= image_tag("s1.jpg", class: "img-responsive") %>
+             </div>
+            <div class="col-md-7 modal_body_right single-top-right">
+              <h3 class="item_name">France Special Dish</h3>
+              <p>Proin placerat urna et consequat efficitur, sem odio blandit enim</p>
+              <div class="single-rating">
+                <ul>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  <li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                  <li class="rating">20 reviews</li>
+                  <li><a href="#">Add your review</a></li>
+                </ul>
+              </div>
+              <div class="single-price">
+                <ul>
+                  <li>$18</li>
+                  <li><del>$20</del></li>
+                  <li><span class="w3off">10% OFF</span></li>
+                  <li>Ends on : Dec,5th</li>
+                  <li><a href="#"><i class="fa fa-gift" aria-hidden="true"></i> Coupon</a></li>
+                </ul>
+              </div>
+              <p class="single-price-text">Fusce a egestas nibh, eget ornare erat. Proin placerat, urna et consequat efficitur, sem odio blandit enim, sit amet euismod turpis est mattis lectus. Vestibulum maximus quam et quam egestas imperdiet. In dignissim auctor viverra. </p>
+              <form action="#" method="post">
+                <input type="hidden" name="cmd" value="_cart" />
+                <input type="hidden" name="add" value="1" />
+                <input type="hidden" name="w3ls_item" value="France Special" />
+                <input type="hidden" name="amount" value="18.00" />
+                <button type="submit" class="w3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+              </form>
+              <a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+              <div class="single-page-icons social-icons">
+                <ul>
+                  <li>
+                    <h4>Share on</h4></li>
+                  <li>
+                    <a href="#" class="fa fa-facebook icon facebook"> </a>
+                  </li>
+                  <li>
+                    <a href="#" class="fa fa-twitter icon twitter"> </a>
+                  </li>
+                  <li>
+                    <a href="#" class="fa fa-google-plus icon googleplus"> </a>
+                  </li>
+                  <li>
+                    <a href="#" class="fa fa-dribbble icon dribbble"> </a>
+                  </li>
+                  <li>
+                    <a href="#" class="fa fa-rss icon rss"> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="clearfix"> </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
 
-<%= link_to 'New Experience', new_experience_path %>
+  <div class="subscribe agileits-w3layouts">
+    <div class="container">
+      <div class="col-md-12 subscribe-right">
+        <h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>
+        <form action="#" method="post">
+          <input type="email" name="email" placeholder="Enter your Email..." required="">
+          <input type="submit" value="Subscribe">
+          <div class="clearfix"> </div>
+        </form>
+        <!--<img src="images/i1.png" class="sub-w3lsimg" alt="" />-->
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+
+<div class="copyw3-agile">
+    <div class="container">
+      <p>&copy; 2017 Safaree Africa. All rights reserved </p>
+    </div>
+  </div>

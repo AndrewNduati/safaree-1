@@ -20,8 +20,8 @@
 		<tr>
 			<td><%= @booking.id %></td>
 	        <td><%= @booking.trip_date %></td>
-			<td><%= label_tag :Experience, Experience.find_by_id(@booking.experience_id).title %></td>
-			<td><%= label_tag :Experience, Experience.find_by_id(@booking.experience_id).description %></td>
+			<td><%= Experience.find_by_id(@booking.experience_id).title %></td>
+			<td><%= Experience.find_by_id(@booking.experience_id).description %></td>
 		</tr>
 
 	</tbody>

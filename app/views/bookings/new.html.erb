@@ -4,9 +4,11 @@
 <%= form_for :booking, :url=>{:action => "create"}, method: :post do |f| %>
 	<p>
 	<%= f.label :experience %><br>
-    <%= f.text_field :experience_id, :value => (params[:experience_id]), :required =>true, class: 'form-control' %><br>
+    <%= f.text_field :experience_id, :value => (Experience.find_by_id(params[:experience_id]).title), :required =>true, class: 'form-control' %><br>
     <%= f.label :user %><br>
-    <%= f.text_field :user_id, :value => (params[:user_id]), :required =>true, class: 'form-control' %><br>
+    <%= f.text_field :user_id, :value => (User.find_by_id(params[:users_id]).name), :required =>true, class: 'form-control' %><br>
+    <%= f.label :price %><br>
+    <%= f.number_field :trip_date, :value => (Experience.find_by_id(params[:experience_id]).price), :required =>true, class: 'form-control' %><br>
     <%= f.label :date %><br>
     <%= f.date_field :trip_date, :required =>true, class: 'form-control' %><br>
     

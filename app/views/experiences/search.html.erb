@@ -1,0 +1,119 @@
+<body>
+<!-- banner -->
+	<div class="banner">
+		<!-- header -->
+		<div class="header">
+			<!-- navigation -->
+			<div  class="navigation agiletop-nav">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header w3l_logo">
+							<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<h1><a href="index.html">Safaree<span><h6>Africa</h6></span></a></h1>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+							<ul class="nav navbar-nav navbar-right">
+								<li class="header-button"><a href="index.html" >Sign up</a></li>
+								<li class="header-button"><a href="index.html">Log in</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!-- //navigation -->
+		</div>
+		<!-- //header-end -->
+		<!-- banner-text -->
+		<div class="banner-text">
+			<div class="container">
+				<h2>Find a New Experience <br> <span>Book unique experiences driven by locals</span></h2>
+				<div class="agileits_search">
+				<%= form_tag experiences_path, method: :get do %>
+                   <%= text_field_tag :search, params[:search] %>
+
+                   <%= submit_tag "Search", name: nil %>
+               <% end %>	
+			</div>
+		</div>
+	</div>
+	<!-- add-products -->
+	<div class="add-products">
+		<div class="container-fluid">
+			<div class="row add-products-row">
+				<div class="col-md-4 col-sm-6 w3ls-add-grids lagos">
+					<a href="menu.html">
+						<h4 style="color: white">Lagos</h4>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 w3ls-add-grids w3ls-add-grids-right accra">
+					<a href="products.html">
+						<h4 style="color: white">Accra</h4>
+					</a>
+				</div>
+				<div class="col-md-4 col-sm-6 w3ls-add-grids w3ls-add-grids-right lome">
+					<a href="menu.html">
+						<h4 style="color: white">Lome</h4>
+					</a>
+				</div>
+				<div style="margin-bottom: 20px" class="clearfix"> </div>
+
+			<div >
+				<div class="col-sm-6 w3ls-add-grids cotonou">
+					<a href="menu.html">
+						<h4 style="color: white">Cotonou</h4>
+					</a>
+				</div>
+				<div class="col-sm-6 w3ls-add-grids w3ls-add-grids-right kakum">
+					<a href="menu.html">
+						<h4 style="color: white">Kakum</h4>
+					</a>
+				</div>
+				<div class="col-sm-6 w3ls-add-grids w3ls-add-grids-right abuja">
+					<a href="menu.html">
+						<h4 style="color: white">Abuja</h4>
+					</a>
+				</div>
+			</div>
+
+				
+			</div>
+
+				<div class="clearfix"> </div>
+			</div>
+			<!--<div style="margin-top: 25px" class="row add-products-row ">
+				<div class="w3ls-add-grids cotonou">
+					<a href="menu.html">
+						<h4 style="color: white">Cotonou</h4>
+					</a>
+				</div>
+				<div class="w3ls-add-grids w3ls-add-grids-right kakum">
+					<a href="menu.html">
+						<h4 style="color: white">Kakum</h4>
+					</a>
+				</div>
+				<div class="w3ls-add-grids w3ls-add-grids-right abuja">
+					<a href="menu.html">
+						<h4 style="color: white">Abuja</h4>
+					</a>
+				</div>
+
+				<div class="clearfix"> </div>
+			</div>-->
+		</div>
+
+	</div>
+
+</body>
+
+<% @experiences.each do |experience| %>
+
+<%= experience.title %>
+<%= experience.tagline %>
+
+<% end %>
