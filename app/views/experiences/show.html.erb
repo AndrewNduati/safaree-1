@@ -1,47 +1,72 @@
 <p id="notice"><%= notice %></p>
-<h1>Showing New Experience</h1>
-<table>
-	<thead>
-		<tr>
-		<td>
-		 Title
-		</td>
-		<td>
-		Tagline
-		</td>
-		<td>
-		 Poster
-		</td>
-		<td>
-		Provided
-		</td>
-		<td>
-		 Notes
-		</td>
-		<td>
-		Description
-		</td>
-		<td>
-		Deadline
-		</td>
-	</thead>
-	<tbody>
-		<tr>
-			<td><%= @experience.title %></td>
-	        <td><%= @experience.tagline %></td>
-	        <td><%= @experience.poster_url %></td>
-	        <td><%= @experience.provided %></td>
-	        <td><%= @experience.notes %></td>
-	        <td><%= @experience.description %></td>
-	        <td><%= @experience.deadline %> </td>
-		</tr>
-		<p>
-  <strong>Image:</strong>
-  <%= image_tag @experience.poster_url.url %>
-		</p>
-	</tbody>
-</table>
+
+<div class="header">
+			<!-- navigation -->
+			<div  class="navigation agiletop-nav">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header w3l_logo">
+							<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<h1> <%= image_tag("safaree-v6-2.png") %></h1>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+							<ul class="nav navbar-nav navbar-right">
+								<li class="header-button"><a href="index.html" >Sign up</a></li>
+								<li class="header-button"><a href="index.html">Log in</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!-- //navigation -->
+		</div>
+<div class="privacy about">
+		<div class="experience-details">
+			<div class="container">
+				<div class="row">
+					<div class="experience-banner col-md-12">
+						<%= image_tag @experience.poster_url.url %>
+						
+						<div class="inner-info">
+							<p>$<%= @experience.price %><p>
+							<button style="border-color: #e67e22; background-color: #e67e22;
+    border-radius: 0px; padding: 8px; width: 100%; margin: 0 auto" class="btn btn-primary">Book Now</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div style="padding-right: 150px" class="col-md-12">
+						<h1 style="margin-top: 20px" ><%= @experience.title %></h1>
+						<h2 style="margin-top: 20px" ><%= @experience.tagline %></h2>
+						<p>
+						<%= @experience.description %>
+						</p>
+
+				<div style="margin-top: 40px" class="lower">
+					<h3 style="padding-top: 20px" >What you will do</h3>
+					<ul style="padding: 10px; background-color: #fff; margin-right: 200px">
+						<li style="background-color: #fff"><%= @experience.provided %> </li>
+						<li style="background-color: #fff"><%= @experience.notes %> </li>
+						  </li>
+					</ul>
+						<p> The Booking Deadline is :<%= @experience.deadline %> </p>
+				</div>
 
 
-<%= link_to 'Edit', edit_experience_path(@experience) %> |
-<%= link_to 'Back', experiences_path %>
+
+					</div>
+					<!--<div style="background-color: white" class = "col-md-5">
+						<h3>What you will do</h3>
+					</div>-->
+				</div>
+
+				</div>
+			</div>
+		</div>

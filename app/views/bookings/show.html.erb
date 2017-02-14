@@ -9,22 +9,13 @@
 		<td>
 		Booked Date
 		</td>
-		<td>
-		Experience 
-		</td>
-		<td>
-		Description
-		</td>
 	</thead>
 	<tbody>
 		<tr>
 			<td><%= @booking.id %></td>
 	        <td><%= @booking.trip_date %></td>
-			<td><%= Experience.find_by_id(@booking.experience_id).title %></td>
-			<td><%= Experience.find_by_id(@booking.experience_id).description %></td>
 		</tr>
 
 	</tbody>
 </table>
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
-<%= link_to 'Back', bookings_path %>
+

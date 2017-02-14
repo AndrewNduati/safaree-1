@@ -8,7 +8,9 @@ class ExperiencesController < ApplicationController
   end
 
   def search
+   
     @experiences = Experience.search(params[:search])
+  
   end
   # GET /experiences/1
   # GET /experiences/1.json

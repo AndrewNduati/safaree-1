@@ -1,8 +1,8 @@
 <body>
 <!-- banner -->
-	<div class="banner">
+	<div class="banner container-fluid">
 		<!-- header -->
-		<div class="header">
+		<div class="header ">
 			<!-- navigation -->
 			<div  class="navigation agiletop-nav">
 				<div class="container">
@@ -15,7 +15,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<h1><a href="index.html">Safaree<span><h6>Africa</h6></span></a></h1>
+							<h1> <%= link_to image_tag("safaree-v6-2.png"), "/" %></h1>
 						</div>
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
@@ -32,17 +32,28 @@
 		<!-- banner-text -->
 		<div class="banner-text">
 			<div class="container">
-				<h2>Find a New Experience <br> <span>Book unique experiences driven by locals</span></h2>
-				<div class="agileits_search">
+				<h2> <span> Discover & Book unique experiences driven by locals</span></h2>
+				
 				<%= form_tag experiences_path, method: :get do %>
-                   <%= text_field_tag :search, params[:search] %>
+				  <div class="agileits_search">
+                      <%= text_field_tag :search, params[:search] %>
 
-                   <%= submit_tag "Search", name: nil %>
+                      <%= submit_tag "Search", name: nil %>
+                    </div>
                <% end %>	
-			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
 		</div>
 	</div>
 	<!-- add-products -->
+	
+
+	</div>
+
 	<div class="add-products">
 		<div class="container-fluid">
 			<div class="row add-products-row">
@@ -52,7 +63,7 @@
 					</a>
 				</div>
 				<div class="col-md-4 col-sm-6 w3ls-add-grids w3ls-add-grids-right accra">
-					<a href="products.html">
+					<a href="experiences">
 						<h4 style="color: white">Accra</h4>
 					</a>
 				</div>
@@ -85,29 +96,27 @@
 			</div>
 
 				<div class="clearfix"> </div>
-			</div>
-			<!--<div style="margin-top: 25px" class="row add-products-row ">
-				<div class="w3ls-add-grids cotonou">
-					<a href="menu.html">
-						<h4 style="color: white">Cotonou</h4>
-					</a>
-				</div>
-				<div class="w3ls-add-grids w3ls-add-grids-right kakum">
-					<a href="menu.html">
-						<h4 style="color: white">Kakum</h4>
-					</a>
-				</div>
-				<div class="w3ls-add-grids w3ls-add-grids-right abuja">
-					<a href="menu.html">
-						<h4 style="color: white">Abuja</h4>
-					</a>
-				</div>
-
-				<div class="clearfix"> </div>
-			</div>-->
 		</div>
-
 	</div>
+
+
+	<!-- subscribe -->
+	<div class="subscribe agileits-w3layouts">
+		<div class="container">
+			
+			<div class="col-md-12 subscribe-right">
+				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>
+				<form action="#" method="post">
+					<input type="email" name="email" placeholder="Enter your Email..." required="">
+					<input type="submit" value="Subscribe">
+					<div class="clearfix"> </div>
+				</form>
+				<!--<img src="images/i1.png" class="sub-w3lsimg" alt="" />-->
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- //subscribe -->
 
 </body>
 

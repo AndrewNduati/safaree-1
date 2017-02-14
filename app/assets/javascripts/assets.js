@@ -36,3 +36,11 @@ jQuery(document).ready(function($) {
         }, 1000);
       });
     });
+
+addEventListener("load", function() {
+      setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+      window.scrollTo(0, 1);
+    }

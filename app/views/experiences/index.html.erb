@@ -15,7 +15,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <h1><a href="index.html">Safaree<span>Africa</span></a></h1>
+              <h1><a href="/">Safaree<span>Africa</span></a></h1>
             </div>
             <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
               
@@ -63,9 +63,7 @@
                   <h3 class="mg-avl-room-title"><a href="#"><%= experience.title %></a> <span style="float: right">$<%= experience.price %></span></h3>
                   <p><%= experience.description %></p>
                   <div class="row mg-room-fecilities">
-                    <div class="col-sm-6">
-                        <ul><li><%= experience.provided %></li></ul>
-                    </div>
+
                   </div>
                 
                   <%= link_to 'View Details', experience, {:class => "btn btn-light"} %>
