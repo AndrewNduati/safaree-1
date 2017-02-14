@@ -4,14 +4,19 @@ class ExperiencesController < ApplicationController
   # GET /experiences
   # GET /experiences.json
   def index
-    @experiences = Experience.all
+     
+    if params[:search].present?
+       
+       @experiences = Experience.search_for(params[:search])
+
+    else
+      
+      @experiences = Experience.all
+    end
+   
   end
 
-  def search
-   
-    @experiences = Experience.search(params[:search])
   
-  end
   # GET /experiences/1
   # GET /experiences/1.json
   def show

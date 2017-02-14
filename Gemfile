@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.0.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
+# pg-search for full text search and all
+gem 'pg_search'
 # Carrier wave for file and image uploading
 gem 'carrierwave', '~> 1.0'
 # Mini Magick to provide even thumbnails and all for this
