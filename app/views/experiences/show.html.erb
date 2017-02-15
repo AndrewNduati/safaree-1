@@ -35,8 +35,10 @@
 						
 						<div class="inner-info">
 							<p>$<%= @experience.price %><p>
-							<button style="border-color: #e67e22; background-color: #e67e22;
-    border-radius: 0px; padding: 8px; width: 100%; margin: 0 auto" class="btn btn-primary">Book Now</button>
+							
+							<%= link_to "Book Now",{:controller => "bookings", :action => "new", :experience_id => params[:id],:users_id => 2}, 
+							{ :style => 'border-color: #e67e22; background-color: #e67e22; 
+									border-radius: 0px; padding: 8px; width: 100%; margin: 0 auto', :class =>'btn btn-primary'} %>
 						</div>
 					</div>
 				</div>

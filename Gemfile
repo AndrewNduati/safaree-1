@@ -13,7 +13,7 @@ gem 'pg'
 # pg-search for full text search and all
 gem 'pg_search'
 # Carrier wave for file and image uploading
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 # Mini Magick to provide even thumbnails and all for this
 gem 'mini_magick'
 # Use Puma as the app server

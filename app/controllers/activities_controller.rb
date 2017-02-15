@@ -25,6 +25,7 @@ class ActivitiesController < ApplicationController
   # POST /activities
   # POST /activities.json
   def create
+    
     @activity = Activity.new(activity_params)
 
     @activity.experience_id = params[:experience_id]
@@ -73,6 +74,6 @@ class ActivitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def activity_params
-      params.require(:activity).permit(:title, :start_time, :end_time, :date, :pic1_url,:pic2_url,:pic3_url, :price)
+      params.require(:activity).permit(:title, :start_time, :end_time, :date, {pictures: []}, :price)
     end
 end
