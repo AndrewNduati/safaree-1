@@ -16,6 +16,8 @@ gem 'pg_search'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 # Mini Magick to provide even thumbnails and all for this
 gem 'mini_magick'
+# Paystack for payments on our platform
+gem 'paystack'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -25,7 +27,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 # Search kick for Elastic searches and  all 
 # gem "searchkick"
 # Use jquery as the JavaScript library

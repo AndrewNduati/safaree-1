@@ -1,3 +1,5 @@
+<script type="text/javascript" src="https://js.paystack.co/v1/inline.js"> </script>
+
 <p id="notice"><%= notice %></p>
 <h1>New Booking</h1>
 
@@ -7,14 +9,54 @@
     <%= f.text_field :experience_id, :value => (Experience.find_by_id(params[:experience_id]).title), :required =>true, class: 'form-control', disabled: "disabled" %><br>
    
     <%= f.label :price %><br>
-    <%= f.number_field :trip_date, :value => (Experience.find_by_id(params[:experience_id]).price), :required =>true, class: 'form-control', disabled: "disabled"  %><br>
+    <%= f.number_field :price, :value => (Experience.find_by_id(params[:experience_id]).price), :required =>true, class: 'form-control', disabled: "disabled"  %><br>
     <%= f.label :date %><br>
     <%= f.date_field :trip_date, :required =>true, class: 'form-control' %><br>
     
 	</p>
 	<p>
 	<%= render 'form', booking: @booking %>
-		
+	<%= link_to "book here", "https://paystack.com/pay/devqPNGH7p" %>
+	
 	</p>
 	<% end %>
+	<script type="text/javascript">
+	
+	function transactionCode(len){
+     var text = "T";
+    
+     var charset = "0123456789";
+    
+      for( var i=0; i < len; i++ )
+        
+        text += charset.charAt(Math.floor(Math.random() * charset.length));
+    
+     return text;
+     
+    }
+
+	$('.submit-booking').click(function(e){
+		e.preventDefault();
+		var handler = PaystackPop.setup({
+      key: 'pk_test_89b2d983b1c91c915f180a4f6d83f8da92762fd5',
+      email: 'customer@email.com',
+      amount: $('#booking_price').val(),
+      ref: transactionCode(16),
+      experience: $('#experience_id').val(),
+      metadata: {
+         
+      },
+      callback: function(response){
+          alert('success. transaction ref is ' + response.reference);
+      },
+      onClose: function(){
+          alert('window closed');
+      }
+    });
+    handler.openIframe();	
+
+	})
+
+
+</script>
 
