@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
   
   get '/', to: 'experiences#search'
+  
   resources :bookings
   resources :users
 
-
+  get '/bookings/new' => 'bookings#new', :as => :new
   
 	resources :experiences do 
-	 # Activities belong to CERTAIN experiences.... 	
-	  	
+	 # Activities belong to CERTAIN experiences....
+
 	 	resources :activities
 	end
   

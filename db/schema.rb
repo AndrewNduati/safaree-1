@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215101948) do
+ActiveRecord::Schema.define(version: 20170216134754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170215101948) do
     t.time    "end_time"
     t.date    "date"
     t.string  "location"
-    t.float   "price"
+    t.integer "price"
     t.integer "experience_id"
     t.text    "pictures",      default: [], array: true
     t.index ["experience_id"], name: "index_activities_on_experience_id", using: :btree
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170215101948) do
     t.text    "notes"
     t.date    "deadline"
     t.text    "description"
-    t.float   "price"
+    t.integer "price"
     t.string  "country"
     t.index ["user_id"], name: "index_experiences_on_user_id", using: :btree
   end

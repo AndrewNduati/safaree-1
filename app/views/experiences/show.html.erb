@@ -26,12 +26,13 @@
 			</div>
 			<!-- //navigation -->
 		</div>
-<div class="privacy about">
+       
+       <div class="privacy about">
 		<div class="experience-details">
 			<div class="container">
 				<div class="row">
 					<div class="experience-banner col-md-12">
-						<%= image_tag @experience.poster_url.url %>
+						<%= image_tag(@experience.poster_url.url(:standard)) %>
 						
 						<div class="inner-info">
 							<p>$<%= @experience.price %><p>
@@ -61,7 +62,8 @@
 						<p> The Booking Deadline is :<%= @experience.deadline %> </p>
 				</div>
 
-
+						<p> Your guide will be <%= label_tag User.find_by_id(@experience.user_id).name %><br>
+							Likes: <%= label_tag User.find_by_id(@experience.user_id).description %> <br>
 
 					</div>
 					<!--<div style="background-color: white" class = "col-md-5">

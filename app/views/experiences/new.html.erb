@@ -12,6 +12,8 @@
     <%= f.label :poster_url %><br>
     <%= f.file_field :poster_url, :required =>true, class: 'form-control' %><br>
     
+    <%= f.hidden_field(:poster_url_cache) %>
+
     <%= f.label :provided %><br>
     <%= f.text_area :provided, :required =>true, class: 'form-control' %><br>
    

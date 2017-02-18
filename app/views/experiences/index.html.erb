@@ -37,7 +37,7 @@
       <div class="container">
         <div class="col-md-9 product-w3ls-right">
           <div class="product-top">
-            <h4>Experiences</h4>
+            <h4><%= @experiences.count %> Experiences</h4>
             <ul>
               <li class="dropdown head-dpdn">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Filter By<span class="caret"></span></a>
@@ -57,18 +57,17 @@
             <div class="mg-avl-room">
               <div class="row">
                 <div class="col-sm-5">
-                <%= image_tag experience.poster_url.url, class: "img-responsive" %>  
+                <%= link_to image_tag(experience.poster_url.url, class: "img-responsive"), experience %>  
                 </div>
                 <div class="col-sm-7">
-                  <h3 class="mg-avl-room-title"><a href="#"><%= experience.title %></a> <span style="float: right">$<%= experience.price %></span></h3>
-                  <p><%= experience.description %></p>
+                  <h3 class="mg-avl-room-title"><%= experience.title %> <span style="float: right">$<%= experience.price %></span></h3>
+                    <p><%= experience.description %></p>
                   <div class="row mg-room-fecilities">
-                  <p><%= experience.country %></p>
+                    <p><%= experience.country %></p>
                   </div>
-                
-                  <%= link_to 'View Details', experience, {:class => "btn btn-light"} %>
-                  <%= link_to "Book Now", {:controller => "bookings", :action => "new", :experience_id => experience.id, :users_id => 2}, 
-                                {:class => "btn btn-main pull-right"} %>
+                 
+                    <%= link_to "Book Now", experience, {:class => "btn btn-main pull-right"} %>
+                    
                   </div>
               </div>
             </div>
@@ -76,6 +75,13 @@
           <% end %>
         </div>
 
+        <!-- TODO: Modal for bookings -->
+        <div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          
+         
+        </div>
+
+        <!-- Modal for bookings -->
           <!--Side-bar -->
         </div>
         <div class="col-md-3 rsidebar">

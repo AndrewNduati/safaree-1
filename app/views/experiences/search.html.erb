@@ -121,3 +121,19 @@
 
 </body>
 
+<script type="text/javascript">
+$("#search").autocomplete({
+source: function (request, response) {
+    $.ajax({
+        url: "/experiences",
+        data: { query: request },
+        success: function (data) {
+            $this.val(data);
+        },
+        error: function () {
+            alert('oops')
+        }
+    });
+});	
+</script>
+

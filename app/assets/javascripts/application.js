@@ -11,10 +11,13 @@
 // about supported directives.
 //
 //
-//= require jquery
 //= require jquery_ujs
+//= require jquery
 //= require turbolinks
 //= require bootstrap.min
+//= require bootstrap
+//= require bootstrap/modal
+//= bootstrap-modal
 //= require bookings
 //= require_tree .
 

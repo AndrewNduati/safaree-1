@@ -22,3 +22,6 @@
 
 # Ignore the Local Environment Variables
 /config/local_env.yml
+
+# Ignore cloudinary Configuration file
+/config/cloudinary.yml

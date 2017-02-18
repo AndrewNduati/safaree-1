@@ -15,7 +15,7 @@
     
 	</p>
 	<p>
-	<%= render 'form', booking: @booking %>
+	<%= f.submit class: "submit-booking" %>
 	<%= link_to "book here", "https://paystack.com/pay/devqPNGH7p" %>
 	
 	</p>
@@ -38,7 +38,7 @@
 	$('.submit-booking').click(function(e){
 		e.preventDefault();
 		var handler = PaystackPop.setup({
-      key: 'pk_test_89b2d983b1c91c915f180a4f6d83f8da92762fd5',
+      key: '<%= ENV['PAYSTACK_PUBLIC_KEY'] %>',
       email: 'customer@email.com',
       amount: $('#booking_price').val(),
       ref: transactionCode(16),
